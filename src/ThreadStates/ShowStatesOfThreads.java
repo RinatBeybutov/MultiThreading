@@ -1,3 +1,5 @@
+package ThreadStates;
+
 import java.lang.Thread.State;
 
 public class ShowStatesOfThreads {

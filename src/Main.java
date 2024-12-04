@@ -1,30 +1,25 @@
+import FindMinMaxTwoThreads.FindMinMaxTwoThreads;
 
-import ShipsConcurrent.Starter;
-import java.util.stream.Collectors;
-
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
-  public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
+        System.out.println("getErrorNum() = " + getErrorNum());
 
-  }
+    }
 
-  public static void startFindMinMaxTwoThread() {
-    int[] array = new int[]{1, 20, 3, -5, 1, 5, 0, 12, -24, 17, 12};
-
-    FindMinMaxTwoThreads finder = new FindMinMaxTwoThreads(array);
-    finder.findMinMax();
-  }
-
-  public static void startShipsConcurrent() {
-    Starter starter = new Starter();
-    starter.start();
-  }
-
-  public static void printStates() throws InterruptedException {
-    ShowStatesOfThreads starter = new ShowStatesOfThreads();
-    starter.startThread();
-  }
-
+    public static int getErrorNum() {
+        try {
+            throw new IllegalAccessException();
+        } catch (IllegalAccessException e) {
+            System.out.println("catch");
+            return 1;
+        } finally {
+            System.out.println("finally");
+            return 2;
+        }
+    }
 }
